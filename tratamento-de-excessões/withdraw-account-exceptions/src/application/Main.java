@@ -35,5 +35,7 @@ public class Main {
         } catch(withdrawException e){
             System.out.print("Withdraw error: " + e.getMessage());
         }
+
+        sc.close();
     }
 }
