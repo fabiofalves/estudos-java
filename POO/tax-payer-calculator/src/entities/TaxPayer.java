@@ -29,10 +29,6 @@ public abstract class TaxPayer {
         this.anualIncome = anualIncome;
     }
 
-    public abstract double tax();
+    public abstract Double tax();
 
-    @Override
-    public String toString() {
-        return name + ": $ " + String.format("%.2f", tax());
-    }
 }

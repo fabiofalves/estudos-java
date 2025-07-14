@@ -45,10 +45,13 @@ public class Program {
 
         System.out.println();
         System.out.println("TAXES PAID:");
+        for(TaxPayer taxPayer : list){
+            System.out.println(taxPayer.getName() + ": $ " + String.format("%.2f", taxPayer.tax()));
+        }
+
         double totalTax = 0.0;
         for(TaxPayer taxPayer : list){
             totalTax += taxPayer.tax();
-            System.out.println(taxPayer.toString());
         }
 
         System.out.println();
