@@ -27,9 +27,9 @@ public class Main {
         Account account = new Account(number, holder, balance, withDrawLimit);
 
         System.out.println();
+        System.out.print("Enter amount for withdraw: ");
+        Double amount = sc.nextDouble();
         try{
-            System.out.print("Enter amount for withdraw: ");
-            Double amount = sc.nextDouble();
             account.withdraw(amount);
             System.out.print("New balance: " + String.format("%.2f", account.getBalance()));
         } catch(withdrawException e){

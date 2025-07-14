@@ -52,13 +52,16 @@ public class Account {
     }
 
     public void withdraw(Double amount){
-        if (amount > withdrawLimit) {
+        validateWithdraw(amount);
+        balance -= amount;
+    }
+
+    public void validateWithdraw(Double amount){
+        if (amount > getWithdrawLimit()) {
             throw new withdrawException("The amount exceeds withdraw limit");
         }
-        if(balance < amount){
+        if(amount > getBalance()){
             throw new withdrawException("The balance is insufficient");
         }
-
-        balance -= amount;
     }
 }
