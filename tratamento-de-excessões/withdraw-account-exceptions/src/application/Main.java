@@ -34,8 +34,8 @@ public class Main {
             System.out.print("New balance: " + String.format("%.2f", account.getBalance()));
         } catch(withdrawException e){
             System.out.print("Withdraw error: " + e.getMessage());
+        } finally{
+            sc.close();
         }
-
-        sc.close();
     }
 }
