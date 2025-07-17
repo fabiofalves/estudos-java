@@ -1,13 +1,15 @@
 package model.services;
 
+import model.entities.Contract;
+
 public class PaypalService implements OnlinePaymentService{
 
     public Double paymentFee (Double amount){
-
+        return amount * 0.02;
     }
 
-    public Double interest (Double amount, Integer month){
-
+    public Double interest (Double amount, Integer months){
+        return amount * 0.01 * months;
     }
 
 }

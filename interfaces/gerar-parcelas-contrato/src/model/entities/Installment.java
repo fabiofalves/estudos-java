@@ -1,6 +1,7 @@
 package model.entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Installment {
 
@@ -15,8 +16,8 @@ public class Installment {
         this.amount = amount;
     }
 
-    public LocalDate getDueDate() {
-        return dueDate;
+    public String getDueDate() {
+        return dueDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
     public void setDueDate(LocalDate dueDate) {
