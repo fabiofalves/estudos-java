@@ -18,14 +18,13 @@ public class ContractService {
         for(int i = 0; i < numberInstallment.length; i++){
             numberInstallment[i] = i+1;
 
+            Double taxMonth = onlinePaymentService.interest(amount, numberInstallment[i]);
+            amount += taxMonth;
             Double paymentFee = amount + onlinePaymentService.paymentFee(amount);
-            Double tax = onlinePaymentService.interest(amount, numberInstallment[i]);
-
-            Double installmentValue = paymentFee + tax;
 
             dueDate = contract.getDate().plusMonths(numberInstallment[i]);
 
-            contract.addInstallment(new Installment(dueDate, installmentValue));
+            contract.addInstallment(new Installment(dueDate, paymentFee));
         }
 
     }
