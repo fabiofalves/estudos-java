@@ -1,7 +1,7 @@
 package application;
 
-import entities.CarRental;
-import entities.Vehicle;
+import model.entities.CarRental;
+import model.entities.Vehicle;
 import model.services.BrazilTaxService;
 import model.services.RentalService;
 
@@ -37,6 +37,7 @@ public class Main {
         Double pricePerDay = sc.nextDouble();
 
         RentalService rentalService = new RentalService(pricePerHour, pricePerDay, new BrazilTaxService());
+        rentalService.processInvoice(carRental);
 
         System.out.println("INVOICE:");
         System.out.println("Basic payment: " + String.format("%.2f", carRental.getInvoice().getBasicPayment()));
