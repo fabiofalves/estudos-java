@@ -31,4 +31,9 @@ public class Installment {
     public void setAmount(Double amount) {
         this.amount = amount;
     }
+
+    @Override
+    public String toString() {
+        return getDueDate() + " - " + String.format("%.2f", getAmount());
+    }
 }

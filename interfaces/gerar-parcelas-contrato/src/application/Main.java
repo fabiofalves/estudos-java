@@ -40,7 +40,7 @@ public class Main {
 
         System.out.println("INSTALLMENTS:");
         for(Installment installment : contract.getInstallmentList()){
-            System.out.println(installment.getDueDate() + " - R$ " + String.format("%.2f", installment.getAmount()));
+            System.out.println(installment);
         }
         sc.close();
     }
