@@ -34,9 +34,8 @@ public class Main {
         System.out.print("Enter the number of installments: ");
         int totalInstallments = sc.nextInt();
 
-        ContractService contractService = new ContractService();
+        ContractService contractService = new ContractService(new PaypalService());
 
-        contractService.setOnlinePaymentService(new PaypalService());
         contractService.processContract(contract, totalInstallments);
 
         System.out.println("INSTALLMENTS:");

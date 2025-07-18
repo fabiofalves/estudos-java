@@ -9,6 +9,10 @@ public class ContractService {
 
     private OnlinePaymentService onlinePaymentService;
 
+    public ContractService(OnlinePaymentService onlinePaymentService) {
+        this.onlinePaymentService = onlinePaymentService;
+    }
+
     public void processContract (Contract contract, Integer month){
 
         LocalDate dueDate;
@@ -26,13 +30,4 @@ public class ContractService {
         }
 
     }
-
-    public void setOnlinePaymentService(OnlinePaymentService onlinePaymentService){
-        this.onlinePaymentService = onlinePaymentService;
-    }
-
-    public OnlinePaymentService getOnlinePaymentService() {
-        return onlinePaymentService;
-    }
-
 }
