@@ -18,6 +18,7 @@
 *.zip
 *.tar.gz
 *.rar
+db.properties
 
 # IntelliJ IDEA
 .idea/
